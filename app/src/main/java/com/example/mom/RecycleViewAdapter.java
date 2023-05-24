@@ -7,14 +7,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class RecycleViewAdapter extends RecyclerView.ViewHolder {
     TextView textView;
-    RecyclerView recyclerView;
+    //FloatingActionButton floatingActionButton;
 
     public RecycleViewAdapter(@NonNull View itemView) {
         super(itemView);
         textView = itemView.findViewById(R.id.textView);
-        recyclerView = itemView.findViewById(R.id.recyclerView4);
+        //floatingActionButton = itemView.findViewById(R.id.floatingActionButton2);
 
     }
 }
