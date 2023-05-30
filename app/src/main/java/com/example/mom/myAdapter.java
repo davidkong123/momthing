@@ -38,9 +38,6 @@ public class myAdapter extends RecyclerView.Adapter<RecycleViewAdapter>{
     @Override
     public void onBindViewHolder(@NonNull RecycleViewAdapter holder, int position) {
         holder.textView.setText(items.get(position).getSen());
-        //floatingActionButton = holder.floatingActionButton.findViewById(R.id.floatingActionButton2);
-
-
 
     }
 
@@ -49,9 +46,6 @@ public class myAdapter extends RecyclerView.Adapter<RecycleViewAdapter>{
         return items.size();
     }
 
-    void onClick(View view){
-        //if(view == floatingActionButton){}
-    }
 
 
 }

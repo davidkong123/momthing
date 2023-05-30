@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         btns[0] = findViewById(R.id.button);
         btns[1] = findViewById(R.id.button2);
         btns[2] = findViewById(R.id.button3);
@@ -29,24 +30,39 @@ public class MainActivity extends AppCompatActivity {
         recyclerViews[1] = findViewById(R.id.recyclerView2);
         recyclerViews[2] = findViewById(R.id.recyclerView3);
 
-        String[] lans = {};
-        List<Item> items = new ArrayList<Item>();
-        items.add(new Item("מה נשמעה",lans));
+        String[] lans = {"Language 1", "Language 2", "Language 3"};
 
-        for (int i = 0; i < 3; i++) {
-            btns[i].setOnClickListener(this::onClick);
-            recyclerViews[i].setLayoutManager(new LinearLayoutManager(this));
-            recyclerViews[i].setAdapter(new myAdapter(getApplicationContext(), items));
-        }
+        List<Item> items1 = new ArrayList<>();
+        items1.add(new Item("מה נשמעה 1", lans));
 
+        List<Item> items2 = new ArrayList<>();
+        items2.add(new Item("מה נשמעה 2", lans));
+
+        List<Item> items3 = new ArrayList<>();
+        items3.add(new Item("מה נשמעה 3", lans));
+
+        btns[0].setOnClickListener(this::onClick);
+        recyclerViews[0].setLayoutManager(new LinearLayoutManager(this));
+        recyclerViews[0].setAdapter(new myAdapter(getApplicationContext(), items1));
+
+        btns[1].setOnClickListener(this::onClick);
+        recyclerViews[1].setLayoutManager(new LinearLayoutManager(this));
+        recyclerViews[1].setAdapter(new myAdapter(getApplicationContext(), items2));
+
+        btns[2].setOnClickListener(this::onClick);
+        recyclerViews[2].setLayoutManager(new LinearLayoutManager(this));
+        recyclerViews[2].setAdapter(new myAdapter(getApplicationContext(), items3));
     }
 
-    void onClick(View view){
+    void onClick(View view) {
+        recyclerViews[0].setVisibility(View.GONE); // Hide RecyclerView 1
+        recyclerViews[1].setVisibility(View.GONE); // Hide RecyclerView 2
+        recyclerViews[2].setVisibility(View.GONE); // Hide RecyclerView 3
+
         if (view == btns[0]) {
             recyclerViews[0].setVisibility(View.VISIBLE);
             Toast.makeText(this, "1", Toast.LENGTH_SHORT).show();
-        }
-        else if (view == btns[1]) {
+        } else if (view == btns[1]) {
             recyclerViews[1].setVisibility(View.VISIBLE);
             Toast.makeText(this, "2", Toast.LENGTH_SHORT).show();
         }

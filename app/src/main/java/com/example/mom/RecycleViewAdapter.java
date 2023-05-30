@@ -16,7 +16,7 @@ public class RecycleViewAdapter extends RecyclerView.ViewHolder {
     public RecycleViewAdapter(@NonNull View itemView) {
         super(itemView);
         textView = itemView.findViewById(R.id.textView);
-        //floatingActionButton = itemView.findViewById(R.id.floatingActionButton2);
+        //floatingActionButton = itemView.findViewById(R.id.floatingActionButton);
 
     }
 }
